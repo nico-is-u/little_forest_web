@@ -1,12 +1,17 @@
 import { createApp } from 'vue'
+import { createPinia } from 'pinia'
 import Taro from '@tarojs/taro'
 import './app.scss'
 
 /* App Core */
 import { checkAndShowGuide } from './app.core'
 
+/* 业务相关 */
+import _AppStore from './store/app'
+
 const App = createApp({
   onLaunch(options) {
+
     console.log('=================================')
     console.log('🚀 小森邻应用启动')
     console.log('=================================')
@@ -14,7 +19,11 @@ const App = createApp({
     // 🆕 检查是否需要显示引导页
     checkAndShowGuide(options)
     
+    // 获取APP基础信息
+    const AppStore = _AppStore()
+    AppStore.getAppData()
   },
+
 
   onShow2(options) {
 
@@ -51,15 +60,11 @@ const App = createApp({
     console.log('✅ 应用初始化完成')
     console.log('=================================\n')
   },
-
-  // 🆕 检查并显示引导页的方法
-  checkAndShowGuide(options) {
-    // 获取引导页状态 key
-    const GUIDE_STORAGE_KEY = 'show_guide'
-  }
-
-
   // 入口组件不需要实现 render 方法，即使实现了也会被 taro 所覆盖
 })
 
+const AppPinia = createPinia()
+
+
+App.use(AppPinia)
 export default App

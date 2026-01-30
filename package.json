@@ -52,6 +52,8 @@
     "@tarojs/runtime": "4.1.10",
     "@tarojs/shared": "4.1.10",
     "@tarojs/taro": "4.1.10",
+    "axios": "^1.13.4",
+    "pinia": "^3.0.4",
     "vue": "^3.3.0"
   },
   "devDependencies": {
