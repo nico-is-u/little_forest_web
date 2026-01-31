@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html class="light" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>小森邻首页-NutUI风格</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#10b981", // Emerald 500
+                        "primary-dark": "#059669", // Emerald 600
+                        "primary-light": "#ecfdf5", // Emerald 50
+                        "background-light": "#f7f8f7",
+                        "nut-gray": "#969799",
+                        "nut-border": "#ebedf0",
+                        "price-red": "#fa2c19" // NutUI standard red
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "PingFang SC", "Microsoft YaHei", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "nut": "12px",
+                        "nut-lg": "18px"
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            body {
+                font-family: 'PingFang SC', 'Lexend', sans-serif;
+                background-color: theme('colors.background-light');
+                -webkit-tap-highlight-color: transparent;
+                color: #323233;
+            }
+        }
+        .nut-card {
+            @apply bg-white rounded-nut p-4 shadow-sm border border-nut-border mb-4 overflow-hidden;
+        }
+        .nut-button-primary {
+            @apply bg-primary text-white rounded-full font-bold transition-opacity active:opacity-80 flex items-center justify-center gap-1;
+        }
+        .nut-input {
+            @apply w-full border-0 bg-gray-50 rounded-lg focus:ring-2 focus:ring-primary/20 text-lg;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tab-bar {
+            @apply fixed bottom-0 left-0 right-0 bg-white border-t border-nut-border px-2 pt-2 pb-6 flex justify-around items-center z-50;
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen">
+<header class="sticky top-0 z-50 bg-white border-b border-nut-border px-4 h-16 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-full bg-cover bg-center border border-primary/20 shadow-sm" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDsxCgP_AH6b_-tbOQVgJVRojwn2j0ERAjmX9lKt95rx95Hq7XIDdzYCuwtX47CNGeqxWhA_QhKGdthiMmXJllkZQlhf8qXcM0GrgEW-Eqa77VCXNrGLvFof0m1M9i-u6olw_oRZwZCGHH8pizrRUV05lX3HEoAGuUcsPxFEomcBEySdf6yES97XTbuuQqA1jiy2mspnakh06-WGbH9ZJVge-81lVvfcxcvUL_iZuPUQhuUVQ8favVPw2A9TKJL-y27w-KZOhcRjpov");'></div>
+<div>
+<p class="text-[12px] text-nut-gray font-semibold">早上好</p>
+<h1 class="text-base font-bold">陈奶奶</h1>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-[#323233]">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-[#323233] relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-price-red rounded-full border-2 border-white"></span>
+</button>
+</div>
+</header>
+<main class="p-4 pb-28">
+<div class="nut-card">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary font-bold">package_2</span>
+<h2 class="font-bold text-lg">代取快递</h2>
+</div>
+<span class="text-xs text-nut-gray">2件包裹待取</span>
+</div>
+<div class="space-y-4">
+<div class="relative">
+<input class="nut-input h-16 text-center text-3xl font-black tracking-[0.5em] placeholder:text-gray-200" maxlength="6" placeholder="000000" type="text"/>
+<p class="text-center text-xs text-nut-gray mt-2">请输入取件码</p>
+</div>
+<button class="nut-button-primary w-full h-14 text-lg">
+<span>确认取件</span>
+</button>
+</div>
+</div>
+<div class="nut-card">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-orange-500 font-bold">local_taxi</span>
+<h2 class="font-bold text-lg">代叫网约车</h2>
+</div>
+<div class="bg-gray-50 rounded-lg p-3 space-y-3 mb-4">
+<div class="flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<input class="bg-transparent border-0 p-0 flex-1 text-sm font-medium focus:ring-0" type="text" value="柳溪长者之家"/>
+<span class="text-[10px] text-nut-gray">从哪出发</span>
+</div>
+<div class="h-[1px] bg-nut-border ml-5"></div>
+<div class="flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-orange-500"></span>
+<input class="bg-transparent border-0 p-0 flex-1 text-sm font-medium focus:ring-0" placeholder="要去哪里" type="text"/>
+</div>
+</div>
+<button class="nut-button-primary w-full h-14 bg-orange-500 text-lg">
+<span class="material-symbols-outlined">call</span>
+<span>立即呼叫</span>
+</button>
+</div>
+<div class="nut-card">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-red-500 font-bold">medical_services</span>
+<h2 class="font-bold text-lg">健康助手</h2>
+</div>
+<p class="text-sm font-medium mb-4 text-[#646566]">常见症状</p>
+<div class="grid grid-cols-4 gap-2 mb-6">
+<button class="flex flex-col items-center gap-2">
+<div class="w-14 h-14 rounded-2xl bg-red-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-red-500 text-3xl font-light">headset_mic</span>
+</div>
+<span class="text-xs font-medium">头痛</span>
+</button>
+<button class="flex flex-col items-center gap-2">
+<div class="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-orange-500 text-3xl font-light">thermometer</span>
+</div>
+<span class="text-xs font-medium">发烧</span>
+</button>
+<button class="flex flex-col items-center gap-2">
+<div class="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-blue-500 text-3xl font-light">air</span>
+</div>
+<span class="text-xs font-medium">咳嗽</span>
+</button>
+<button class="flex flex-col items-center gap-2">
+<div class="w-14 h-14 rounded-2xl bg-gray-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-nut-gray text-3xl font-light">more_horiz</span>
+</div>
+<span class="text-xs font-medium">更多</span>
+</button>
+</div>
+<button class="w-full h-14 border-2 border-dashed border-primary/30 rounded-full text-primary font-bold flex items-center justify-center gap-2 hover:bg-primary-light">
+<span class="material-symbols-outlined">medication</span>
+<span>代买药品</span>
+</button>
+</div>
+<div class="mb-2">
+<div class="flex items-center justify-between mb-4 px-1">
+<h2 class="text-lg font-bold">社区特惠</h2>
+<button class="text-sm text-nut-gray flex items-center">
+                查看更多 <span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<div class="nut-card p-0 flex">
+<div class="w-32 h-32 bg-cover bg-center shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCrsDqFV-WLa-19s5mrVgyfrba3-CPD3Q9np5eM__wWS0EkVhfrXogCLI9Ut84EtyJAa-XXE4CzHS1iGahh7bob4UmM1cX1yp6mHIQtMYjAc4BTF6LCsrZkrrJIBaMaxEZb4ht2Xf0pPPUlzbRGL0snT-V3BxnSAPvDb1sfuRg8k34XyB9plUx3EyXKjzENVmXNjBKg4nRE41oGATnESf8VYv0Vntexnh7SHLi11JSY50hSTia7UZ5pYlBgy91CJNC05MfW_8DgIwip");'></div>
+<div class="p-3 flex flex-col justify-between flex-1">
+<div>
+<h3 class="font-bold text-sm line-clamp-1">有机糙米 5kg</h3>
+<div class="flex items-center gap-1 mt-1">
+<span class="bg-red-50 text-price-red text-[10px] px-1.5 py-0.5 rounded-sm font-bold border border-red-100">热卖</span>
+</div>
+</div>
+<div class="flex items-end justify-between">
+<div>
+<p class="text-price-red font-black text-xl">¥49.9</p>
+<p class="text-[10px] text-nut-gray">124 位邻居已买</p>
+</div>
+<button class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<div class="nut-card p-0 flex">
+<div class="w-32 h-32 bg-cover bg-center shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCfxxYqQ68kazObC8zBimqa9hgaXDY4hSJ_5FpsagDGOohAjxyT4t2O9_liWS-27mwGb4wC5ee-05G5Fd5QHJQ_Gzb14qiUq7Mdi-qPq8Dwh1p5sZq03WYPqt8NYNkxH5RCEXpdCvQfotdAstAYf3DonoqXjAnuV10Hg09a82yIQK0olrK88tfWMNbssJfQfv4B7g1ZsXmjGgCJmcQiX-19ELA1GCU1l00QfJYjG3sajUvJ4Xi8ILggo3MjsVbOPZnA-EhvR8qgPGPq");'></div>
+<div class="p-3 flex flex-col justify-between flex-1">
+<div>
+<h3 class="font-bold text-sm line-clamp-1">新鲜甜橙</h3>
+<div class="flex items-center gap-1 mt-1">
+<span class="bg-orange-50 text-orange-500 text-[10px] px-1.5 py-0.5 rounded-sm font-bold border border-orange-100">今日新鲜</span>
+</div>
+</div>
+<div class="flex items-end justify-between">
+<div>
+<p class="text-price-red font-black text-xl">¥29.0</p>
+<p class="text-[10px] text-nut-gray">86 位邻居已买</p>
+</div>
+<button class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<nav class="tab-bar">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[28px] fill-1">home</span>
+<span class="text-[11px] font-bold">首页</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-nut-gray">
+<span class="material-symbols-outlined text-[28px]">shopping_basket</span>
+<span class="text-[11px] font-medium">团购</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-nut-gray">
+<span class="material-symbols-outlined text-[28px]">assignment</span>
+<span class="text-[11px] font-medium">订单</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-nut-gray">
+<span class="material-symbols-outlined text-[28px]">person_outline</span>
+<span class="text-[11px] font-medium">我的</span>
+</button>
+</nav>
+
+</body></html>

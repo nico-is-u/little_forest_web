@@ -1,8 +1,6 @@
 <template>
     <view class="page tab-page">
-        <view class="page-content">
-          首页正文
-        </view>
+        我的
         <tabbar/>
     </view>
 </template>

@@ -1,0 +1,66 @@
+/* iconfont */
+@import url('//at.alicdn.com/t/c/font_5120756_5n1azddpig6.css');
+
+.iconfont {
+  font-family: "little_forest" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 全局样式变量 */
+:root {
+    --color-primary: #10b981;               // 主题颜色
+    --color-gray:#969799;                   // 主题灰色
+    --bg-page: #f7f8f7;                     // .page主背景色
+
+    /* NutUI */
+    --nut-tabbar-item-text-font-size:30px;
+    --nut-tabbar-height:120px;
+    --nut-tabbar-icon:55px;
+}
+
+/*
+** 全局样式 
+*/
+
+.page{
+    box-sizing: border-box;
+
+    height: 100%;
+    background-color: var(--bg-page);
+
+    display: flex;
+    flex-direction: column;
+
+    &.tab-page{
+        padding-bottom: var(--nut-tabbar-height);
+    }
+
+    /* 正文 */
+    .page-content{
+        flex-grow: 1;
+    }
+
+
+}
+
+/*
+** NutUI
+*/
+
+
+// tabbar
+.nut-tabbar{
+    position: fixed;
+    bottom: 0;
+}
+.nut-tabbar-item_icon-box {
+    gap: 2px;
+    .iconfont.nut-icon{
+        width: var(--nut-tabbar-icon);
+        height: var(--nut-tabbar-icon);
+        font-size: var(--nut-tabbar-icon);
+    }
+}

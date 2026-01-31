@@ -1,12 +1,29 @@
 export default {
   pages: [
+    /* tabbar页面 */
     'pages/index/index',
-    'pages/guide/index'
+    'pages/mine/index',
+
+    /* 其他页面 */
+    'pages/guide/index',
   ],
   window: {
-    backgroundTextStyle: 'light',
-    navigationBarBackgroundColor: '#fff',
-    navigationBarTitleText: 'WeChat',
-    navigationBarTextStyle: 'black'
+    navigationStyle: 'custom',        // 开启自定义导航栏
+    backgroundTextStyle: 'black',
+    navigationBarBackgroundColor: 'white',
+    navigationBarTitleText: '',
+  },
+  tabBar:{
+    custom: true,
+    list: [
+      {
+        pagePath: 'pages/index/index',
+        text: '首页'
+      },
+      {
+        pagePath: 'pages/mine/index',
+        text: '我的'
+      }
+    ]
   }
 }
