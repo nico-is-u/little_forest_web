@@ -22,7 +22,7 @@ export default defineConfig(async (merge, { command, mode }) => {
     },
     deviceRatio: {
       640: 2.34 / 2,
-      750: 1,
+      750: 2,
       375: 2,
       828: 1.81 / 2
     },

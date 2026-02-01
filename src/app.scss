@@ -13,12 +13,18 @@
 :root {
     --color-primary: #10b981;               // 主题颜色
     --color-gray:#969799;                   // 主题灰色
+    --color-black:#323233;                  // 主题黑色
     --bg-page: #f7f8f7;                     // .page主背景色
 
     /* NutUI */
-    --nut-tabbar-item-text-font-size:30px;
-    --nut-tabbar-height:120px;
-    --nut-tabbar-icon:55px;
+    --nut-navbar-title-font:18px;
+    --nut-tabbar-item-text-font-size:15px;
+    --nut-tabbar-height:65px;
+    --nut-tabbar-icon:27.5px;
+
+    --nut-avatar-normal-width: 42px;
+    --nut-avatar-normal-height: 42px;
+
 }
 
 /*
@@ -35,6 +41,7 @@
     flex-direction: column;
 
     &.tab-page{
+        padding-top: var(--nut-tabbar-height);
         padding-bottom: var(--nut-tabbar-height);
     }
 
@@ -43,21 +50,71 @@
         flex-grow: 1;
     }
 
+}
+
+
+/*
+** 全局样式 
+*/
+.flex{
+    display: flex;
+    &.flex-column{
+        flex-direction: column;
+    }
+    &.flex-between{
+        justify-content: space-between;
+    }
+
+    &.flex-center{
+        align-items: center;
+        justify-content: center;
+    }
+    &.flex-y-center{
+        align-items: center;
+    }
+    &.flex-x-center{
+        justify-content: center;
+    }
+}
+
+.icon-box{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    color: var(--color-black);
+
+    .iconfont{
+        font-size: 20px;
+    }
 
 }
+
+.card-box{
+    
+}
+
+
 
 /*
 ** NutUI
 */
+
+// navbar
+.page{
+    .nut-navbar{
+    }
+}
 
 
 // tabbar
 .nut-tabbar{
     position: fixed;
     bottom: 0;
+
+    width: 100%;
 }
 .nut-tabbar-item_icon-box {
-    gap: 2px;
     .iconfont.nut-icon{
         width: var(--nut-tabbar-icon);
         height: var(--nut-tabbar-icon);
